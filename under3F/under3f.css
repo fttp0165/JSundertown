@@ -11,15 +11,39 @@
       height: 525px;
       margin: auto;
       background-color: #072245;
-
-  
 }
 .header{
       width: 350px;
       height: 109px;
       background-color:#031A36;
       border-radius: 25px 25px 0 0;
+     
 }
+.header p{
+      color: #e8e8e8;
+      z-index: 1;
+      box-sizing: border-box;
+      display: flex;
+      justify-content:flex-end;
+      align-items:flex-end;
+      margin: 0;
+      position: relative;
+      font: Roboto;
+   
+}
+.header .process{
+      top: 5px;
+      right: 15px;
+      font-size: 16px;
+      color: #01B9F2;
+}
+
+.header .result{
+      top: 5px;
+      right: 15px;
+      font-size: 56px;
+}
+
 .body{
       width: 350px;
       height: 525px;
