@@ -16,7 +16,7 @@
       width: 350px;
       height: 109px;
       background-color:#031A36;
-      border-radius: 25px 25px 0 0;
+      border-radius: 20px 20px 0 0;
      
 }
 .header p{
@@ -32,23 +32,24 @@
    
 }
 .header .process{
-      top: 5px;
+      top: 16px;
       right: 15px;
       font-size: 16px;
       color: #01B9F2;
 }
 
 .header .result{
-      top: 5px;
-      right: 15px;
+      top: 17px;
+      height: 66px;
+      line-height: 66px;
       font-size: 56px;
 }
 
 .body{
       width: 350px;
-      height: 525px;
+      height: 416px;
       background-color:#072245;
-      border-radius: 0 0 25px 25px;
+      border-radius: 0 0 20px 20px;
       display: flex;
       justify-content:flex-start;
       position: relative;
@@ -56,18 +57,20 @@
       justify-content:flex-end;
 }
 .body p{
-      line-height: 64px;
-      width: 72px;
+   
+      width: 71px;
       height: 64px;
       margin: 0;
       z-index: 1;
       box-sizing: border-box;
       color:#e8e8e8;
-      padding: 0 32px;
+      padding: 18px 27px;
       background-color:#072245;
-      border-radius: 25px;
+      border-radius: 16px;
       display: inline-block;
-      margin:8px 7px;
+      margin:8px 8px;
+      font-size: 24px;
+   
 }
 p.fun{
       background-color:#031A36;
@@ -75,6 +78,11 @@ p.fun{
 }
 p.equ{
       width: 155px;
-      background-color:#456b99;
-  
+      background:linear-gradient(90deg,#00C4FF,#6C00FF);
+      background-repeat:no-repeat;
+      display: flex;
+      justify-content:flex-end;
+}
+p.acDe{
+      color: #00C4FF;
 }
