@@ -1,5 +1,6 @@
 
 var block=document.querySelector("p");
+var equ=document.querySelector(".equ");
 var bodyclick=document.querySelectorAll(".number");
 let showProcess=document.querySelector(".process");
 let fun=document.querySelectorAll(".fun");
@@ -14,6 +15,16 @@ for(i=0;i<bodyclick.length;i++){
       });
 }
 
+equ.addEventListener("click",function(){
+      
+      number=resultProcess.innerHTML+showProcess.innerHTML;
+      resultProcess.innerHTML=resultProcess.innerHTML+showProcess.innerHTML;
+      console.log(number);
+      number=number.replaceAll('x','*');
+      number=number.replaceAll('÷','/');
+      showProcess.innerHTML=eval(number);
+});
+
 
 for(i=0;i<fun.length;i++){
       //偵測function鍵顯示至處理列
@@ -22,6 +33,9 @@ for(i=0;i<fun.length;i++){
             str=showProcess.innerHTML;
             //判斷前一個輸入是否為key
             str=checkFunKey(str);
+            if(str==''){
+               checkFunKey(resultProcess.innerHTML);
+            }
             str=showValue(this.innerHTML);
             console.log('----');
             console.log(str);
@@ -37,6 +51,7 @@ for(i=0;i<acDe.length;i++){
             if(this.innerHTML=='AC'){
                   //讀取到‘ＡＣ’刪除處理列
                   showProcess.innerHTML='';
+                  resultProcess.innerHTML='';
                   lastLoaction=0;
                   number=[];
             }else{
