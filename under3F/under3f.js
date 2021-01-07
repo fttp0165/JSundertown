@@ -9,10 +9,8 @@ let number="";
 let lastLoaction=0;
 for(i=0;i<bodyclick.length;i++){
       //偵測數字鍵並顯示至處理列
-      
       bodyclick[i].addEventListener("click",function(){
-                 
-                  showValue(this.innerHTML);
+      showValue(this.innerHTML);
       });
 }
 
@@ -25,15 +23,14 @@ for(i=0;i<fun.length;i++){
             //判斷前一個輸入是否為key
             str=checkFunKey(str);
             str=showValue(this.innerHTML);
+            console.log('----');
+            console.log(str);
             resultProcess.innerHTML=resultProcess.innerHTML+str;
+            console.log(resultProcess.innerHTML);
             showProcess.innerHTML='';
             lastLoaction=str.length+1;
-            console.log("number:"+(number));
-          
       });
 }
-
-
 
 for(i=0;i<acDe.length;i++){
       acDe[i].addEventListener("click",function(){ 
@@ -54,8 +51,15 @@ for(i=0;i<acDe.length;i++){
 
 function showValue(keyIn){
       // 將輸入顯示到處理列
-      showProcess.innerHTML=checkZero(showProcess.innerHTML);
-      return showProcess.innerHTML=showProcess.innerHTML+keyIn;
+      if(resultProcess.innerHTML ==''){
+          showProcess.innerHTML=checkZero(showProcess.innerHTML);
+      }
+      console.log(showProcess.innerHTML);
+      re = /(\d{1,3})(?=(\d{3})+(?:$|\D))/g ;
+      showProcess.innerHTML=showProcess.innerHTML+keyIn;
+      showProcess.innerHTML=showProcess.innerHTML.replaceAll(',', "");
+      showProcess.innerHTML=showProcess.innerHTML.replace(re, "$1,");
+      return showProcess.innerHTML
 }
 
 function checkFunKey(currentProcess){
@@ -66,9 +70,11 @@ function checkFunKey(currentProcess){
    return currentProcess;
 }
 function checkZero(currentProcess){
-   var lastInput=currentProcess.substr(currentProcess.length-1,currentProcess.length);
+   var lastInput=currentProcess;
    console.log(lastInput);
    if (lastInput == 0){
+      console.log(lastInput);
+      console.log('0 is ex');
       return currentProcess='';
    }
    return currentProcess;
