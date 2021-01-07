@@ -66,6 +66,10 @@ for(i=0;i<acDe.length;i++){
 
 function showValue(keyIn){
       // 將輸入顯示到處理列
+      
+      if(showProcess.innerHTML.length > 10){
+        document.querySelector(".process").style.fontSize = "large";
+      }
       if(resultProcess.innerHTML ==''){
           showProcess.innerHTML=checkZero(showProcess.innerHTML);
       }
